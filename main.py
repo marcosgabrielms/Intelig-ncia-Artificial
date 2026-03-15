@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 
-# Base de dados: [Cenas de Ação, Cenas de Romance]
+# [Cenas de Ação, Cenas de Romance]
 filmes = [
     [15, 2], # Ação 1
     [12, 4], # Ação 2 
@@ -10,15 +10,12 @@ filmes = [
 ]
 generos = ['Ação', 'Ação', 'Romance', 'Romance']
 
-# Criação e treinamento do modelo KNN (K=3)
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(filmes, generos)
-
 
 novo_filme = [[10, 10]] 
 resultado = knn.predict(novo_filme)
 print(f"Resultado KNN: O filme foi classificado como {resultado[0]}")
-
 
 # PLOTAGEM 
 
